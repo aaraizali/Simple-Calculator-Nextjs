@@ -118,6 +118,7 @@ export default function Calculator() {
         }`}
         animate={{ y: [-10, 0] }}
         transition={{ duration: 0.3 }}
+        whileHover={{ y: -10, boxShadow: "0px 10px 30px rgba(0,0,0,0.1)" }} // Card lift effect on hover
       >
         <CardHeader>
           <CardTitle>Simple Calculator</CardTitle>
@@ -148,7 +149,7 @@ export default function Calculator() {
               <ul>
                 {history.map((entry, index) => (
                   <li key={index}>{entry}</li>
-                ))}
+                ))} 
               </ul>
             </div>
           )}
