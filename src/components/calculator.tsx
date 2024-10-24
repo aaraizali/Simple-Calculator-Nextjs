@@ -77,7 +77,7 @@ export default function Calculator() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [num1, num2]); // Only num1 and num2 as dependencies
+  }, [num1, num2]);
 
   return (
     <motion.div
@@ -87,6 +87,16 @@ export default function Calculator() {
       animate={{ opacity: [0, 1] }}
       transition={{ duration: 0.5 }}
     >
+      {/* "Built by Aaraiz" with animation */}
+      <motion.div
+        className="text-xl font-semibold mb-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+      >
+        Built by <span className="text-indigo-600">Aaraiz</span>
+      </motion.div>
+
       <div className="w-full max-w-6xl mb-6 mx-auto p-5">
         <motion.div
           className="flex items-center justify-between space-x-4"
@@ -149,7 +159,7 @@ export default function Calculator() {
               <ul>
                 {history.map((entry, index) => (
                   <li key={index}>{entry}</li>
-                ))} 
+                ))}
               </ul>
             </div>
           )}
